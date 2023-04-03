@@ -9,7 +9,7 @@ part 'rick_morty_model.g.dart';
 class RickMortyModel with _$RickMortyModel {
   const factory RickMortyModel({
     @HiveField(0) required Info info,
-    @HiveField(1) @Default([]) List<Result> results,
+    @HiveField(1) List<Result> results,
   }) = _RickMortyModel;
 
   factory RickMortyModel.fromJson(Map<String, dynamic> json) =>

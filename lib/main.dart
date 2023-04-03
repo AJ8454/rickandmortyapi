@@ -4,7 +4,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:rickandmortyapi/src/app/rick_morty_app.dart';
 import 'package:rickandmortyapi/src/core/evn.dart';
 import 'package:rickandmortyapi/src/core/helpers/app_bloc_observer.dart';
-import 'package:rickandmortyapi/src/injection_container.dart';
+import 'package:rickandmortyapi/src/core/utils/app_strings.dart';
+import 'package:rickandmortyapi/src/injection_container.dart' as di;
 
 import 'src/app/features/home/domain/models/rick_morty_model.dart';
 
@@ -13,11 +14,12 @@ Future<void> main() async {
   Bloc.observer = AppBlocObserver();
   await AppEnvironment.setupEnv(Environment.production);
   //* inject dependencies
-  configInjectin();
+  await di.init();
 
   //* hive local database setup
   await Hive.initFlutter();
   Hive.registerAdapter(RickMortyModelAdapter());
+  await Hive.openBox(AppStrings.rAndMDBBox);
 
   runApp(const RickAndMortyApp());
 }

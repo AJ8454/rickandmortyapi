@@ -14,7 +14,7 @@ abstract class AppEnvironment {
         baseApiUrl = 'http://15.206.178.102:9004/api/v3/';
         break;
       case Environment.production:
-        baseApiUrl = 'https://api.rickandmortyapi.io/';
+        baseApiUrl = 'https://rickandmortyapi.com/api/';
         break;
     }
   }

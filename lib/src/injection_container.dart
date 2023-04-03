@@ -1,5 +1,8 @@
 import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
+import 'package:rickandmortyapi/src/injection_container.config.dart';
 
-final sl = GetIt.instance;
+final GetIt getIt = GetIt.instance;
 
-Future<void> init() async {}
+@InjectableInit()
+void configInjectin() => getIt.init();

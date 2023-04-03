@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rickandmortyapi/src/core/utils/app_strings.dart';
-
 
 class AppResponsive {
   static const kBorderRadius = 12.0;
@@ -66,7 +64,7 @@ class AppResponsive {
         fontSize:
             fsize != null ? fontSize(context) * fsize : kmediumFont(context),
         //  overflow: overf ?? ovrflow,
-        fontFamily: fontFamily ?? AppStrings.rubiesqueFont,
+        fontFamily: fontFamily,
         fontWeight: fweight,
       );
 }
